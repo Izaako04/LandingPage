@@ -23,7 +23,7 @@ CSS STRUCTURE:
 
 --------------------------------------------------------------*/
 body {
-  --heading-font: "Marcellus", Roboto, sans-serif;
+  --heading-font: "Maven Pro", Roboto, sans-serif;
   --heading-font-weight: 400;
   --heading-color: #111;
   --heading-line-height: 1.24;
@@ -31,15 +31,15 @@ body {
   --swiper-theme-color: #8C907E;
 
   /* bootstrap */
-  --bs-body-font-family: "Jost", Roboto, sans-serif;
+  --bs-body-font-family: "Maven Pro", Roboto, sans-serif;
   --bs-body-font-size: 18px;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #8f8f8f;
   --bs-body-color-rgb: 143, 143, 143;
 
-  --bs-primary: #8C907E;
-  --bs-secondary: #6c757d;
+  --bs-primary: #C7B299;
+  --bs-secondary: #675640;
   --bs-black: #111;
   --bs-light: #F1F1F0;
   --bs-dark: #212529;
@@ -616,7 +616,7 @@ a {
 /** Search Popup
 --------------------------------------------------------------*/
 .search-popup {
-  background-color: #fff;
+  background-color: #ffd299;
   position: fixed;
   left: 0;
   top: 0;
