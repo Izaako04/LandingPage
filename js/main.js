@@ -1,4 +1,4 @@
-const databaseURL = "https://landing-eaf66-default-rtdb.firebaseio.com/nombresito.json";
+const databaseURL = "https://landing-427e5-default-rtdb.firebaseio.com/collection.json";
 
 let sendData = ( ) => {  
 
