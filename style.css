@@ -214,6 +214,7 @@ a {
   --bs-link-hover-color-rgb: var(--bs-light-rgb);
 }
 
+
 .text-white .nav-link {
   --bs-nav-link-color: var(--bs-light);
   --bs-nav-link-hover-color: var(--bs-light);
@@ -285,6 +286,10 @@ a {
 
 .preloader.loaded {
   height: 0;
+}
+
+.p{
+  text-align: justify;
 }
 
 /* navbar */
