@@ -271,6 +271,11 @@ a {
 
 /* end of Bootstrap Color Theme */
 
+#dropdownHome, #dropdownPages{
+  color: #F1F1F0
+}
+
+
 /* preloader */
 .preloader {
   position: fixed;
