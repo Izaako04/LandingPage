@@ -1,69 +1,91 @@
-const databaseURL = "https://landing-427e5-default-rtdb.firebaseio.com/collection.json";
+const databaseURL = 'https://fragances-f28bd-default-rtdb.firebaseio.com';
 
-let sendData = ( ) => {  
-
-    // Obtén los datos del formulario
+let sendData = () => {  
+    const form = document.getElementById('form');
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries()); // Convierte FormData a objeto
-    data['saved'] = new Date().toLocaleString('es-CO', { timeZone: 'America/Guayaquil' })
-    // Realiza la petición POST con fetch
-    fetch(databaseURL, {
-        method: 'POST', // Método de la solicitud
+    const data = Object.fromEntries(formData.entries());
+    data['saved'] = new Date().toLocaleString('es-CO', { timeZone: 'America/Guayaquil' });
+
+    fetch(`${databaseURL}/votes.json`, {
+        method: 'POST',
         headers: {
-            'Content-Type': 'application/json' // Especifica que los datos están en formato JSON
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data) // Convierte los datos a JSON
+        body: JSON.stringify(data)
     })
     .then(response => {
         if (!response.ok) {
             throw new Error(`Error en la solicitud: ${response.statusText}`);
         }
-        return response.json(); // Procesa la respuesta como JSON
+        return response.json();
     })
     .then(result => {
-        alert('Agradeciendo tu preferencia, nos mantenemos actualizados y enfocados en atenderte como mereces'); // Maneja la respuesta con un mensaje
-        form.reset()
+        alert('¡Gracias por enviar tus datos!');
+        form.reset();
+        getData();
     })
     .catch(error => {
-        alert('Hemos experimentado un error. ¡Vuelve pronto!'); // Maneja el error con un mensaje
+        console.error('Error al enviar datos:', error);
+        alert('Hubo un problema con tu envío. Por favor, inténtalo de nuevo.');
     });
+};
 
+let getData = async () => {  
+    try {
+        const response = await fetch(`${databaseURL}/votes.json`, {
+            method: 'GET'
+        });
 
-}
-let ready = () => {
-    console.log('DOM está listo')
-    
-}
+        if (!response.ok) {
+            throw new Error('Error al recuperar los datos');
+        }
+
+        const data = await response.json();
+        if (data) {
+            const voteCounts = {};
+            for (let key in data) {
+                const { favoriteCharacter } = data[key];
+                if (favoriteCharacter) {
+                    if (voteCounts[favoriteCharacter]) {
+                        voteCounts[favoriteCharacter]++;
+                    } else {
+                        voteCounts[favoriteCharacter] = 1;
+                    }
+                }
+            }
+
+            const voteTable = document.getElementById('voteTable');
+            voteTable.innerHTML = '';
+            let index = 1;
+            for (let character in voteCounts) {
+                voteTable.innerHTML += `
+                    <tr>
+                        <th>${index}</th>
+                        <td>${character}</td>
+                        <td>${voteCounts[character]}</td>
+                    </tr>`;
+                index++;
+            }
+        }
+    } catch (error) {
+        console.error('Error al obtener datos:', error);
+        alert('Hubo un problema al cargar los datos. Inténtalo más tarde.');
+    }
+};
+
+let ready = () => { 
+    console.log('DOM está listo');
+    getData();
+};
 
 let loaded = () => {
-    let myform = document.getElementById('form');
-    myform.addEventListener('submit', (eventSubmit) => {
+    const form = document.getElementById('form');
+    form.addEventListener('submit', (eventSubmit) => {
         eventSubmit.preventDefault(); 
-        const emailElement = document.querySelector('.form-control-lg');
-           const emailText = emailElement.value;
-
-           if (emailText.length === 0) {
-             emailElement.focus()
-             emailElement.animate(
-                [
-                    { transform: "translateX(0)" },
-                    { transform: "translateX(50px)" },
-                    { transform: "translateX(-50px)" },
-                    { transform: "translateX(0)" }
-                ],
-                {
-                    duration: 400,
-                    easing: "linear",
-                }
-            )
-            return;
-           }
-           sendData();
+        sendData();
     });
-}
+    getData();
+};
 
-
-
- window.addEventListener("DOMContentLoaded", ready);
- window.addEventListener("load", loaded)
- 
+window.addEventListener("DOMContentLoaded", ready);
+window.addEventListener("load", loaded);
