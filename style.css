@@ -1595,7 +1595,97 @@ a {
   color: inherit;
 }
 
+/* Para el contenedor con la imagen de fondo */
+.video-bg {
+  position: relative;
+  height: 100vh; /* Altura completa de la ventana en pantallas grandes */
+  background-image: url('images/video-image.jpg'); /* Imagen de fondo */
+  background-size: cover; /* La imagen cubre todo el contenedor */
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  transition: background-size 0.5s ease; /* Suaviza el cambio de tamaño */
+}
 
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .video-bg {
+    height: auto; /* Permite que la imagen se ajuste automáticamente a su contenido */
+    background-size: 150%; /* "Zoom" en la imagen para pantallas pequeñas */
+  }
+
+  /* Para asegurar que la imagen se mantenga centrada */
+  .video-bg img {
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    height: auto; /* En pantallas pequeñas, la altura es automática */
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+  }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .video-bg {
+    height: auto; /* Permite que la imagen se ajuste automáticamente a su contenido */
+    background-size: 250%; /* "Zoom" en la imagen para pantallas pequeñas */
+  }
+
+  /* Para asegurar que la imagen se mantenga centrada */
+  .video-bg img {
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    height: auto; /* En pantallas pequeñas, la altura es automática */
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+  }
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  /* Ajustes para tabletas y pantallas pequeñas */
+  h1 {
+    font-size: 3rem; /* Disminuir tamaño del título */
+  }
+
+  p {
+    font-size: 1.125rem; /* Disminuir tamaño del párrafo */
+    max-width: 90%; /* Reducir el ancho del párrafo */
+  }
+
+  .overlay-text {
+    top: 15px; /* Asegurarse de que no se corte el texto */
+    left: 15px;
+    text-align: left; /* Asegurar alineación adecuada */
+  }
+
+  .btn {
+    bottom: 120px; /* Ajustar la posición del botón en pantallas pequeñas */
+    right: 15px;
+    font-size: 1rem; /* Tamaño del texto del botón */
+  }
+
+  /* Reducción de altura de la imagen en dispositivos móviles */
+  .video-bg img {
+    height: auto;
+    width: 100%;
+  }
+
+  .navbar-nav {
+    font-size: 1rem; /* Ajustar tamaño de texto en el menú de la navbar */
+  }
+
+  .navbar-toggler-icon {
+    font-size: 1.5rem; /* Asegurar que el ícono de hamburguesa se vea correctamente */
+  }
+}
+
+/* Media Query para dispositivos muy pequeños como teléfonos */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem; /* Más pequeño en pantallas muy pequeñas */
+  }
+
+  .btn {
+    bottom: 100px; /* Ajustar la posición aún más */
+  }
+}
 
 .justified-text {
   text-align: justify;
