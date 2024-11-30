@@ -153,47 +153,6 @@
 
   <div class="preloader text-white fs-6 text-uppercase overflow-hidden"></div>
 
-  <div class="search-popup">
-    <div class="search-popup-container">
-
-      <form role="search" method="get" class="form-group" action="">
-        <input type="search" id="search-form" class="form-control border-0 border-bottom"
-          placeholder="Type and press enter" value="" name="s" />
-        <button type="submit" class="search-submit border-0 position-absolute bg-white"
-          style="top: 15px;right: 15px;"><svg class="search" width="24" height="24">
-            <use xlink:href="#search"></use>
-          </svg></button>
-      </form>
-
-      <h5 class="cat-list-title">Browse Categories</h5>
-
-      <ul class="cat-list">
-        <li class="cat-list-item">
-          <a href="#" title="Jackets">Jackets</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="T-shirts">T-shirts</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Handbags">Handbags</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Accessories">Accessories</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Cosmetics">Cosmetics</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Dresses">Dresses</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Jumpsuits">Jumpsuits</a>
-        </li>
-      </ul>
-
-    </div>
-  </div>
-
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart" aria-labelledby="My Cart">
     <div class="offcanvas-header justify-content-center">
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -237,7 +196,7 @@
     </div>
   </div>
 
-  <nav class="navbar navbar-expand-lg bg-dark text-uppercase fs-6 p-3 border-bottom align-items-center">
+  <nav id="navbar" class="navbar navbar-expand-lg bg-dark text-uppercase fs-6 p-3 border-bottom align-items-center">
     <div class="container-fluid">
       <div class="row justify-content-between align-items-center w-100">
 
@@ -868,69 +827,42 @@
     </div>
   </section>
 
-  <section class="blog py-5">
+  <section class="features py-5" id="contenedorBajo">
     <div class="container">
-      <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
-        <h4 class="text-uppercase">Noticias importantes del mundo de la frangancia</h4>
-      </div>
       <div class="row">
-        <div class="col-md-4">
-          <article class="post-item">
-            <div class="post-image">
-              <a href="index.html">
-                <img src="images/post-image1.jpg" alt="image" class="post-grid-image img-fluid">
-              </a>
-            </div>
-            <div class="post-content d-flex flex-wrap gap-2 my-3">
-              <div class="post-meta text-uppercase fs-6 text-secondary">
-                <span class="post-category">Fashion /</span>
-                <span class="meta-day"> jul 11, 2022</span>
-              </div>
-              <h5 class="post-title text-uppercase">
-                <a href="index.html">How to look outstanding in pastel</a>
-              </h5>
-              <p>Dignissim lacus,turpis ut suspendisse vel tellus.Turpis purus,gravida orci,fringilla...</p>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-4">
-          <article class="post-item">
-            <div class="post-image">
-              <a href="index.html">
-                <img src="images/post-image2.jpg" alt="image" class="post-grid-image img-fluid">
-              </a>
-            </div>
-            <div class="post-content d-flex flex-wrap gap-2 my-3">
-              <div class="post-meta text-uppercase fs-6 text-secondary">
-                <span class="post-category">Fashion /</span>
-                <span class="meta-day"> jul 11, 2022</span>
-              </div>
-              <h5 class="post-title text-uppercase">
-                <a href="index.html">Top 10 fashion trend for summer</a>
-              </h5>
-              <p>Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...</p>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-4">
-          <article class="post-item">
-            <div class="post-image">
-              <a href="index.html">
-                <img src="images/post-image3.jpg" alt="image" class="post-grid-image img-fluid">
-              </a>
-            </div>
-            <div class="post-content d-flex flex-wrap gap-2 my-3">
-              <div class="post-meta text-uppercase fs-6 text-secondary">
-                <span class="post-category">Fashion /</span>
-                <span class="meta-day"> jul 11, 2022</span>
-              </div>
-              <h5 class="post-title text-uppercase">
-                <a href="index.html">Crazy fashion with unique moment</a>
-              </h5>
-              <p>Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...</p>
-            </div>
-          </article>
-        </div>
+        <h2 class="mejoresMomentosText">Comerciales de Marcas</h2>
+        <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="0">
+          <div class="py-5">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/dHQsfZnI-u0?si=MA9AkS3pAVAQSAaM"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <h4 class="titulosVideos">PHANTOM PARFUM</h4>
+              <p>Phantom Parfum de Paco Rabanne es una fragancia futurista y cautivadora, con notas amaderadas y especiadas, ideal para quienes buscan un toque moderno y audaz.</p>
+          </div>
+      </div>
+      
+      <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="300">
+          <div class="py-5">
+              <iframe width="100%" height="200" src="https://www.youtube.com/embed/4VPHVygoca4?si=tllPD72sOowzov9E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h4 class="titulosVideos">OneMillion</h4>
+              <p>One Million viene en un frasco que imita un lingote de oro, simbolizando lujo y poder. Su fragancia especiada y amaderada deja una impresión duradera.</p>
+          </div>
+      </div>
+      
+      <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="600">
+          <div class="py-5">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/uUNROSjryrI?si=VrhFlpCQbb5rtR7W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <h4 class="titulosVideos">Sauvage Elixir</h4>
+              <p>Sauvage Elixir de Dior es una fragancia intensa y sofisticada, con notas amaderadas y especiadas que crean una estela poderosa y envolvente. Perfecta para el hombre audaz y elegante.</p>
+          </div>
+      </div>
+      
+      <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="900">
+          <div class="py-5">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/zzmI-ApEq7Y?si=wsxelUje390hmQIr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <h4 class="titulosVideos">Acqua di Gio</h4>
+              <p>Acqua di Gio de Giorgio Armani es una fragancia fresca y acuática, con notas cítricas y florales que evocan libertad y naturaleza. Ideal para un hombre elegante y refrescante.</p>
+          </div>
+      </div>
+      
       </div>
     </div>
   </section>
