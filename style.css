@@ -23,7 +23,7 @@ CSS STRUCTURE:
 
 --------------------------------------------------------------*/
 body {
-  --heading-font: "Maven Pro", Roboto, sans-serif;
+  --heading-font: "Merriweather", Roboto, sans-serif;
   --heading-font-weight: 400;
   --heading-color: #111;
   --heading-line-height: 1.24;
@@ -31,7 +31,7 @@ body {
   --swiper-theme-color: #8C907E;
 
   /* bootstrap */
-  --bs-body-font-family: "Maven Pro", Roboto, sans-serif;
+  --bs-body-font-family: "Playfair Display", Roboto, sans-serif;
   --bs-body-font-size: 18px;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -1555,4 +1555,348 @@ a.btn-link.text-light:after {
   background-position: center;
   background-size: cover;
   transition: transform .3s ease-out;
+}
+
+/* Cambios Isaac Criollo */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Merriweather&display=swap');
+
+/* Aplicando la tipografía a diferentes elementos */
+body {
+  font-family: 'Merriweather', serif; /* Fuente principal para el texto */
+  line-height: 1.6; /* Mejor legibilidad en párrafos */
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif; /* Fuente elegante para encabezados */
+  font-weight: 700; /* Negrita para un impacto más fuerte */
+}
+
+h1 {
+  font-size: 3rem; /* Tamaño grande para títulos principales */
+}
+
+h2 {
+  font-size: 2.5rem; /* Tamaño grande para subtítulos */
+}
+
+h3 {
+  font-size: 2rem; /* Tamaño adecuado para subtítulos secundarios */
+}
+
+/* Botones y enlaces */
+.btn, .nav-link {
+  font-family: 'Montserrat', sans-serif; /* Fuente sans-serif para botones y enlaces */
+  font-weight: 600; /* Negrita moderada para botones */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+.justified-text {
+  text-align: justify;
+  text-justify: inter-word; /* Mejora la distribución de las palabras */
+}
+
+
+.categories {
+  background-color: #f8f9fa; /* Fondo claro para la sección */
+  padding: 50px 0; /* Espaciado arriba y abajo */
+}
+
+.Text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: #d3b024; /* Color oscuro para el texto */
+}
+
+.open-up {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en filas */
+  justify-content: space-between;
+  gap: 20px; /* Espacio entre los elementos */
+}
+
+.cat-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease; /* Efecto de transformación suave */
+}
+
+.cat-item:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+}
+
+.image-holder {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que la imagen cubra todo el espacio sin deformarse */
+}
+
+.category-content {
+  position: absolute;
+  bottom: 20px; /* Espaciado desde el fondo */
+  left: 20px;
+  right: 20px;
+  z-index: 2; /* Asegura que el contenido esté por encima de la imagen */
+  text-align: center;
+}
+
+.product-button {
+  margin-top: 20px;
+}
+
+.product-button .btn {
+  padding: 10px 20px;
+  background-color: #000000; /* Fondo azul para el botón */
+  color: white; /* Texto blanco */
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.product-button .btn:hover {
+  background-color: #272727; /* Color más oscuro cuando se pasa el cursor */
+}
+
+@media (max-width: 992px) {
+  .cat-item {
+    flex: 1 1 calc(33.333% - 20px); /* Tres elementos por fila en pantallas grandes */
+  }
+}
+
+@media (max-width: 768px) {
+  .Text {
+    font-size: 2rem; /* Título más pequeño en pantallas pequeñas */
+  }
+
+  .open-up {
+    flex-direction: column; /* Coloca las categorías en columna en pantallas pequeñas */
+    align-items: center;
+  }
+
+  .cat-item {
+    flex: 1 1 calc(50% - 20px); /* Dos elementos por fila en pantallas medianas */
+  }
+}
+
+@media (max-width: 576px) {
+  .cat-item {
+    flex: 1 1 100%; /* Un solo elemento por fila en pantallas pequeñas */
+  }
+}
+
+#vendidos {
+  position: relative;
+  overflow: hidden;
+  background-color: #212529; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+#vendidos .container {
+  max-width: 100%;
+  height: 100%;
+  padding: 0 15px;
+}
+
+.swiper {
+  height: 100%;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.product-item {
+  position: relative;
+  height: 100%;
+  flex: 0 0 auto; /* Evita que los elementos se estiren y permite que el swiper los vea como una unidad */
+}
+
+.product-item .image-holder {
+  position: relative;
+  height: 80%; /* Deja espacio para el contenido debajo */
+}
+
+.product-item .product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+.product-content {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.product-content h5 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.product-content span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.icon-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo semi-transparente */
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.icon-arrow svg {
+  fill: white; /* Cambiar el color de las flechas a blanco */
+}
+
+.icon-arrow-left {
+  left: 20px; /* Alineación a la izquierda */
+}
+
+.icon-arrow-right {
+  right: 20px; /* Alineación a la derecha */
+}
+
+/* Efecto de hover en las flechas */
+.icon-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo más oscuro al hacer hover */
+}
+
+/* Media queries para dispositivos más pequeños */
+@media (max-width: 768px) {
+  .product-item {
+    width: 80%; /* Un poco de espacio entre los elementos */
+  }
+
+  .product-content h5 {
+    font-size: 1.1rem; /* Reduce el tamaño de los textos */
+  }
+
+  .product-content span {
+    font-size: 1rem;
+  }
+}
+
+/* //comerciales */
+#contenedorBajo {
+  background-color: #212529; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.col-md-3 {
+  margin-bottom: 2rem; /* Espacio entre columnas */
+}
+
+.col-md-3 .py-5 {
+  padding: 0; /* Elimina el padding extra para una disposición más ajustada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.col-md-3:hover .py-5 {
+  transform: translateY(-10px); /* Efecto de hover: eleva el contenedor */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Añade sombra para dar profundidad */
+}
+
+iframe {
+  border-radius: 8px; /* Bordes redondeados para los videos */
+  max-width: 100%; /* Asegura que los videos no se desborden */
+  height: auto;
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+  .col-md-3 {
+    flex: 0 0 48%; /* Reduce el tamaño de las columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 100%; /* Coloca cada video en una nueva fila en pantallas pequeñas */
+    margin-bottom: 1rem;
+  }
+
+  .Text {
+    font-size: 1.5rem; /* Reduce el tamaño del título en pantallas pequeñas */
+  }
+}
+
+/* Formulario */
+.subscribe-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil para mejorar la legibilidad */
+}
+
+.form-control {
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.btn-dark {
+  border-radius: 10px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.btn-dark:hover {
+  background-color: #343a40; /* Color de fondo al pasar el mouse */
+}
+
+table th, table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Efecto de hover en filas */
+}
+
+.table-light td, .table-light th {
+  padding: 15px;
+}
+
+.table-light {
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+h3.bg-dark {
+  background-color: #212529; /* Fondo oscuro para los encabezados */
+  color: #fff;
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.col-md-8 {
+  max-width: 750px; /* Limitar el ancho para mantener una estructura más compacta */
 }
